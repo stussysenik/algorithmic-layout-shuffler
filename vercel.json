@@ -1,7 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npm run build && rm -rf public && mkdir public && cp -r demo dist public/",
+  "buildCommand": "npm run build && rm -rf public && mkdir -p public/demo && cp demo/index.html public/index.html && cp demo/main.js public/demo/main.js && cp -r dist public/dist",
   "outputDirectory": "public",
-  "cleanUrls": true,
-  "rewrites": [{ "source": "/", "destination": "/demo/index.html" }]
+  "cleanUrls": true
 }
