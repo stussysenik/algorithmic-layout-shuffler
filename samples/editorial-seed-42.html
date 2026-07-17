@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shuffled layout — seed 42 (editorial)</title>
+<style>
+:root{
+  --fluid-space:clamp(1.5rem, 5vw, 6rem);
+  --fluid-gap:clamp(1rem, 3vw, 4rem);
+  --font-display:clamp(2.5rem, 8vw, 11rem);
+  --font-body:clamp(1rem, 1.2vw, 1.25rem);
+  --bg:#f4e6cb;--fg:#2a2110;--accent:hsl(216 68% 32%);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--fg);font-family:Georgia, "Times New Roman", serif}
+.shuffled{display:flex;flex-direction:column}
+.shuffled section{padding:var(--fluid-space);container-type:inline-size;border-block-start:2px solid var(--accent)}
+.shuffled section[data-archetype="full-bleed"]{padding:0}
+.shuffled section:has(figure):not(:has(p)){gap:calc(var(--fluid-gap) * 0.5)}
+.headline{font:700 var(--font-display)/0.95 Georgia, "Times New Roman", serif;letter-spacing:-0.02em;text-wrap:balance;min-inline-size:min(12ch, 100%);}
+.paragraph{font-size:var(--font-body);line-height:1.55;text-wrap:pretty;max-inline-size:62ch;min-inline-size:min(28ch, 100%)}
+.caption{font-size:calc(var(--font-body) * 0.78);letter-spacing:0.08em;text-transform:uppercase;opacity:0.75}
+figure{min-inline-size:min(14rem, 100%)}
+figure .ph{inline-size:100%}
+figure figcaption{padding-block-start:0.5em}
+::selection{background:var(--accent);color:var(--bg)}
+.s0{gap:calc(var(--fluid-gap) * 1);display:grid;grid-template-columns:repeat(6, 1fr);grid-auto-rows:minmax(3rem, auto);min-height:70vh}
+.s1{gap:calc(var(--fluid-gap) * 0.5);display:flex;flex-wrap:wrap;flex-direction:column;justify-content:flex-start;align-items:stretch;min-height:75vh}
+.s2{gap:calc(var(--fluid-gap) * 1);display:flex;flex-wrap:wrap;flex-direction:column;justify-content:center;align-items:center;min-height:49vh}
+.s3{gap:calc(var(--fluid-gap) * 1);display:flex;flex-wrap:wrap;flex-direction:column;justify-content:center;align-items:flex-start;min-height:44vh}
+.s4{gap:calc(var(--fluid-gap) * 1);display:flex;flex-wrap:wrap;flex-direction:column;justify-content:center;align-items:flex-start;min-height:57vh}
+.s5{gap:calc(var(--fluid-gap) * 1);display:flex;flex-wrap:wrap;flex-direction:row;justify-content:flex-start;align-items:flex-start}
+.s6{gap:calc(var(--fluid-gap) * 0.5);display:flex;flex-wrap:wrap;flex-direction:column;justify-content:flex-start;align-items:stretch;min-height:61vh}
+</style>
+</head>
+<body>
+<main class="shuffled">
+  <section class="s0" data-archetype="collage">
+    <figure style="grid-area:1 / 1 / 4 / 5;z-index:1"><div class="ph" style="aspect-ratio:16 / 10;background:linear-gradient(135deg,hsl(200 55% 72%),hsl(240 65% 42%))"></div><figcaption class="caption">From the series “Margins”</figcaption></figure>
+    <h1 class="headline" style="grid-area:2 / 3 / 5 / 7;z-index:2">Margins as Method</h1>
+    <p class="caption" style="grid-area:5 / 1 / 6 / 3">Archive, 2024</p>
+  </section>
+  <section class="s1" data-archetype="full-bleed">
+    <figure style="flex:1 1 100%"><div class="ph" style="aspect-ratio:3 / 4;background:linear-gradient(135deg,hsl(201 55% 72%),hsl(241 65% 42%))"></div><figcaption class="caption">From the series “Margins”</figcaption></figure>
+  </section>
+  <section class="s2" data-archetype="masthead">
+    <p class="caption" style="flex:1 1 100%">No. 04</p>
+    <h2 class="headline" style="flex:0 1 auto">The Shape of Attention</h2>
+  </section>
+  <section class="s3" data-archetype="interlude">
+    <p class="caption" style="flex:0 1 auto">Fig. 01 — Untitled study</p>
+    <p class="paragraph" style="flex:0 1 45ch">Nemo enim ipsam voluptatem quia voluptas sit aspernatur. Proportion is carried by flexible basis and clamped scale, not by pixel arithmetic done once and regretted forever.</p>
+  </section>
+  <section class="s4" data-archetype="masthead">
+    <p class="caption" style="flex:1 1 100%">Selected Work</p>
+    <h2 class="headline" style="flex:0 1 auto">Margins as Method</h2>
+  </section>
+  <section class="s5" data-archetype="strip">
+    <figure style="flex:1 1 16%"><div class="ph" style="aspect-ratio:4 / 3;background:linear-gradient(135deg,hsl(231 55% 72%),hsl(271 65% 42%))"></div><figcaption class="caption">From the series “Margins”</figcaption></figure>
+    <figure style="flex:1 1 18%"><div class="ph" style="aspect-ratio:16 / 10;background:linear-gradient(135deg,hsl(202 55% 72%),hsl(242 65% 42%))"></div><figcaption class="caption">Archive, 2024</figcaption></figure>
+    <figure style="flex:1 1 24%"><div class="ph" style="aspect-ratio:2 / 3;background:linear-gradient(135deg,hsl(227 55% 72%),hsl(267 65% 42%))"></div><figcaption class="caption">Archive, 2024</figcaption></figure>
+    <figure style="flex:1 1 19%"><div class="ph" style="aspect-ratio:3 / 4;background:linear-gradient(135deg,hsl(192 55% 72%),hsl(232 65% 42%))"></div><figcaption class="caption">From the series “Margins”</figcaption></figure>
+  </section>
+  <section class="s6" data-archetype="full-bleed">
+    <figure style="flex:1 1 100%"><div class="ph" style="aspect-ratio:2 / 3;background:linear-gradient(135deg,hsl(220 55% 72%),hsl(260 65% 42%))"></div><figcaption class="caption">Installation view</figcaption></figure>
+  </section>
+</main>
+</body>
+</html>

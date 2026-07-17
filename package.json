@@ -1,0 +1,17 @@
+{
+  "name": "algorithmic-layout-shuffler",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Cargo-style editorial layout machine: seeded shuffle → JSON blueprint → semantic HTML+CSS.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "node test/smoke.mjs",
+    "serve": "python3 -m http.server 4173"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  }
+}

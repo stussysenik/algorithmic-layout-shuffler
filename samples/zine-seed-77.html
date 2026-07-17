@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shuffled layout — seed 77 (zine)</title>
+<style>
+:root{
+  --fluid-space:clamp(0.75rem, 2.5vw, 3rem);
+  --fluid-gap:clamp(0.25rem, 1vw, 1.25rem);
+  --font-display:clamp(3rem, 11vw, 14rem);
+  --font-body:clamp(0.95rem, 1.1vw, 1.1rem);
+  --bg:#111114;--fg:#f4f1ea;--accent:hsl(153 68% 62%);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--fg);font-family:"Helvetica Neue", Helvetica, Arial, sans-serif}
+.shuffled{display:flex;flex-direction:column}
+.shuffled section{padding:var(--fluid-space);container-type:inline-size;border-block-start:2px solid var(--accent)}
+.shuffled section[data-archetype="full-bleed"]{padding:0}
+.shuffled section:has(figure):not(:has(p)){gap:calc(var(--fluid-gap) * 0.5)}
+.headline{font:700 var(--font-display)/0.95 "Arial Narrow", "Helvetica Neue", Arial, sans-serif;letter-spacing:-0.02em;text-wrap:balance;min-inline-size:min(12ch, 100%);text-transform:uppercase;}
+.paragraph{font-size:var(--font-body);line-height:1.55;text-wrap:pretty;max-inline-size:62ch;min-inline-size:min(28ch, 100%)}
+.caption{font-size:calc(var(--font-body) * 0.78);letter-spacing:0.08em;text-transform:uppercase;opacity:0.75}
+figure{min-inline-size:min(14rem, 100%)}
+figure .ph{inline-size:100%}
+figure figcaption{padding-block-start:0.5em}
+::selection{background:var(--accent);color:var(--bg)}
+.s0{gap:calc(var(--fluid-gap) * 1);display:flex;flex-wrap:wrap;flex-direction:row;justify-content:space-between;align-items:flex-end;min-height:80vh}
+.s1{gap:calc(var(--fluid-gap) * 0.5);display:flex;flex-wrap:wrap;flex-direction:column;justify-content:flex-start;align-items:stretch;min-height:72vh}
+.s2{gap:calc(var(--fluid-gap) * 0.5);display:flex;flex-wrap:wrap;flex-direction:row-reverse;justify-content:flex-start;align-items:flex-end}
+.s3{gap:calc(var(--fluid-gap) * 0.5);display:flex;flex-wrap:wrap;flex-direction:row;justify-content:flex-start;align-items:flex-start}
+.s4{gap:calc(var(--fluid-gap) * 1);display:grid;grid-template-columns:repeat(6, 1fr);grid-auto-rows:minmax(3rem, auto);min-height:70vh}
+.s5{gap:calc(var(--fluid-gap) * 1);display:flex;flex-wrap:wrap;flex-direction:column;justify-content:center;align-items:flex-start;min-height:52vh}
+</style>
+</head>
+<body>
+<main class="shuffled">
+  <section class="s0" data-archetype="hero">
+    <h1 class="headline" style="flex:1 1 55%">The Page Is a Room</h1>
+    <figure style="flex:0 1 32%"><div class="ph" style="aspect-ratio:4 / 3;background:linear-gradient(135deg,hsl(189 55% 72%),hsl(229 65% 42%))"></div><figcaption class="caption">Installation view</figcaption></figure>
+  </section>
+  <section class="s1" data-archetype="full-bleed">
+    <figure style="flex:1 1 100%"><div class="ph" style="aspect-ratio:1 / 1;background:linear-gradient(135deg,hsl(178 55% 72%),hsl(218 65% 42%))"></div><figcaption class="caption">Detail, silver gelatin print</figcaption></figure>
+  </section>
+  <section class="s2" data-archetype="split">
+    <p class="paragraph" style="flex:1 1 34%">Lorem ipsum dolor sit amet, consectetur adipiscing elit. The viewport is not a constraint to be negotiated but a sheet to be read, top to bottom, at whatever width it happens to arrive.</p>
+    <figure style="flex:1 1 46%"><div class="ph" style="aspect-ratio:1 / 1;background:linear-gradient(135deg,hsl(202 55% 72%),hsl(242 65% 42%))"></div><figcaption class="caption">Fig. 01 — Untitled study</figcaption></figure>
+  </section>
+  <section class="s3" data-archetype="strip">
+    <figure style="flex:1 1 16%"><div class="ph" style="aspect-ratio:2 / 3;background:linear-gradient(135deg,hsl(165 55% 72%),hsl(205 65% 42%))"></div><figcaption class="caption">Detail, silver gelatin print</figcaption></figure>
+    <figure style="flex:1 1 22%"><div class="ph" style="aspect-ratio:3 / 4;background:linear-gradient(135deg,hsl(143 55% 72%),hsl(183 65% 42%))"></div><figcaption class="caption">From the series “Margins”</figcaption></figure>
+    <figure style="flex:1 1 19%"><div class="ph" style="aspect-ratio:16 / 10;background:linear-gradient(135deg,hsl(158 55% 72%),hsl(198 65% 42%))"></div><figcaption class="caption">From the series “Margins”</figcaption></figure>
+    <p class="caption" style="flex:1 1 100%">Detail, silver gelatin print</p>
+  </section>
+  <section class="s4" data-archetype="collage">
+    <figure style="grid-area:1 / 1 / 4 / 6;z-index:1"><div class="ph" style="aspect-ratio:1 / 1;background:linear-gradient(135deg,hsl(123 55% 72%),hsl(163 65% 42%))"></div><figcaption class="caption">Installation view</figcaption></figure>
+    <h2 class="headline" style="grid-area:3 / 3 / 5 / 7;z-index:2">The Page Is a Room</h2>
+    <p class="caption" style="grid-area:5 / 1 / 6 / 3">Archive, 2024</p>
+  </section>
+  <section class="s5" data-archetype="interlude">
+    <p class="caption" style="flex:0 1 auto">Installation view</p>
+    <p class="paragraph" style="flex:0 1 45ch">Sed ut perspiciatis unde omnis iste natus. Blocks are editorial entities: each one argues for itself, holds its own margins, and refuses to be squeezed into a column count it never asked for.</p>
+  </section>
+</main>
+</body>
+</html>

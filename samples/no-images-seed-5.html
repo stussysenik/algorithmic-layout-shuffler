@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shuffled layout — seed 5 (zine)</title>
+<style>
+:root{
+  --fluid-space:clamp(0.75rem, 2.5vw, 3rem);
+  --fluid-gap:clamp(0.25rem, 1vw, 1.25rem);
+  --font-display:clamp(3rem, 11vw, 14rem);
+  --font-body:clamp(0.95rem, 1.1vw, 1.1rem);
+  --bg:#111114;--fg:#f4f1ea;--accent:hsl(248 68% 62%);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--fg);font-family:"Helvetica Neue", Helvetica, Arial, sans-serif}
+.shuffled{display:flex;flex-direction:column}
+.shuffled section{padding:var(--fluid-space);container-type:inline-size;border-block-start:2px solid var(--accent)}
+.shuffled section[data-archetype="full-bleed"]{padding:0}
+.shuffled section:has(figure):not(:has(p)){gap:calc(var(--fluid-gap) * 0.5)}
+.headline{font:700 var(--font-display)/0.95 "Arial Narrow", "Helvetica Neue", Arial, sans-serif;letter-spacing:-0.02em;text-wrap:balance;min-inline-size:min(12ch, 100%);text-transform:uppercase;}
+.paragraph{font-size:var(--font-body);line-height:1.55;text-wrap:pretty;max-inline-size:62ch;min-inline-size:min(28ch, 100%)}
+.caption{font-size:calc(var(--font-body) * 0.78);letter-spacing:0.08em;text-transform:uppercase;opacity:0.75}
+figure{min-inline-size:min(14rem, 100%)}
+figure .ph{inline-size:100%}
+figure figcaption{padding-block-start:0.5em}
+::selection{background:var(--accent);color:var(--bg)}
+.s0{gap:calc(var(--fluid-gap) * 1);display:flex;flex-wrap:wrap;flex-direction:column;justify-content:flex-start;align-items:flex-end}
+.s1{gap:calc(var(--fluid-gap) * 1.5);display:flex;flex-wrap:wrap;flex-direction:column;justify-content:center;align-items:flex-end;min-height:40vh}
+.s2{gap:calc(var(--fluid-gap) * 1.5);display:flex;flex-wrap:wrap;flex-direction:column;justify-content:flex-start;align-items:flex-start}
+.s3{gap:calc(var(--fluid-gap) * 1);display:flex;flex-wrap:wrap;flex-direction:column;justify-content:flex-start;align-items:flex-end}
+</style>
+</head>
+<body>
+<main class="shuffled">
+  <section class="s0" data-archetype="offset-stack">
+    <h1 class="headline" style="flex:0 1 auto;align-self:flex-start">The Shape of Attention</h1>
+    <p class="paragraph" style="flex:0 1 auto;align-self:flex-end">At vero eos et accusamus et iusto odio dignissimos. When the screen narrows, nothing shrinks into illegibility — the row simply breaks, and the fragment becomes its own page.</p>
+    <p class="paragraph" style="flex:0 1 auto;align-self:flex-start">Nemo enim ipsam voluptatem quia voluptas sit aspernatur. Proportion is carried by flexible basis and clamped scale, not by pixel arithmetic done once and regretted forever.</p>
+    <p class="paragraph" style="flex:0 1 auto;align-self:flex-end">At vero eos et accusamus et iusto odio dignissimos. When the screen narrows, nothing shrinks into illegibility — the row simply breaks, and the fragment becomes its own page.</p>
+  </section>
+  <section class="s1" data-archetype="masthead">
+    <p class="caption" style="flex:1 1 100%">Selected Work</p>
+    <h2 class="headline" style="flex:0 1 auto">A Field Guide to Whitespace</h2>
+  </section>
+  <section class="s2" data-archetype="offset-stack">
+    <h2 class="headline" style="flex:0 1 auto;align-self:flex-start">Everything Loose Will Land</h2>
+    <p class="paragraph" style="flex:0 1 auto;align-self:flex-end">Nemo enim ipsam voluptatem quia voluptas sit aspernatur. Proportion is carried by flexible basis and clamped scale, not by pixel arithmetic done once and regretted forever.</p>
+    <p class="paragraph" style="flex:0 1 auto;align-self:flex-start">Sed ut perspiciatis unde omnis iste natus. Blocks are editorial entities: each one argues for itself, holds its own margins, and refuses to be squeezed into a column count it never asked for.</p>
+  </section>
+  <section class="s3" data-archetype="stack">
+    <h2 class="headline" style="flex:0 1 auto">Against the Grid</h2>
+    <p class="paragraph" style="flex:0 1 auto">At vero eos et accusamus et iusto odio dignissimos. When the screen narrows, nothing shrinks into illegibility — the row simply breaks, and the fragment becomes its own page.</p>
+  </section>
+</main>
+</body>
+</html>

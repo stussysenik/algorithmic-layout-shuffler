@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Layout Shuffler — demo</title>
+  <style>
+    :root {
+      --bar-bg: #0b0b0c;
+      --bar-fg: #e8e8ea;
+      --bar-mut: #8a8a90;
+      --bar-line: #232327;
+      --bar-accent: #6ee7b7;
+      --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      display: flex;
+      flex-direction: column;
+      background: var(--bar-bg);
+      color: var(--bar-fg);
+      font-family: var(--mono);
+    }
+    .bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: clamp(0.5rem, 1.5vw, 1.25rem);
+      padding: clamp(0.5rem, 1.2vw, 0.9rem) clamp(0.75rem, 2vw, 1.5rem);
+      border-bottom: 1px solid var(--bar-line);
+      font-size: clamp(0.7rem, 1.1vw, 0.8rem);
+    }
+    .field { display: inline-flex; align-items: center; gap: 0.5ch; }
+    label { color: var(--bar-mut); text-transform: uppercase; letter-spacing: 0.08em; }
+    input, select, button {
+      font: inherit;
+      color: var(--bar-fg);
+      background: #151518;
+      border: 1px solid var(--bar-line);
+      border-radius: 4px;
+      padding: 0.35em 0.6em;
+    }
+    input[type="number"] { width: 11ch; }
+    input[type="checkbox"] { accent-color: var(--bar-accent); }
+    button { cursor: pointer; }
+    button:hover { border-color: var(--bar-mut); }
+    button:active { transform: translateY(1px); }
+    #reshuffle { color: #0b0b0c; background: var(--bar-accent); border-color: var(--bar-accent); font-weight: 600; }
+    .brand { color: var(--bar-mut); margin-right: auto; letter-spacing: 0.1em; text-transform: uppercase; }
+    #copy.copied { color: var(--bar-accent); border-color: var(--bar-accent); }
+    .strip {
+      display: flex;
+      flex: 0 0 auto;
+      align-items: flex-start;
+      gap: clamp(0.4rem, 1vw, 0.75rem);
+      padding: clamp(0.5rem, 1.2vw, 0.9rem) clamp(0.75rem, 2vw, 1.5rem);
+      border-bottom: 1px solid var(--bar-line);
+      overflow-x: auto;
+    }
+    .thumb {
+      flex: 0 0 auto;
+      padding: 0;
+      border: 1px solid var(--bar-line);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .thumb:hover { border-color: var(--bar-accent); }
+    .thumb-box { width: 144px; height: 180px; overflow: hidden; pointer-events: none; }
+    .thumb-frame {
+      width: 1200px;
+      height: 1500px;
+      border: 0;
+      background: #fff;
+      transform: scale(0.12);
+      transform-origin: top left;
+      pointer-events: none;
+    }
+    .preview { flex: 1 1 auto; border: 0; width: 100%; background: #fff; }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <span class="brand">layout://shuffler</span>
+    <span class="field">
+      <label for="seed">seed</label>
+      <input id="seed" type="number" min="0" step="1" inputmode="numeric" autocomplete="off" />
+    </span>
+    <button id="reshuffle" type="button">reshuffle</button>
+    <span class="field">
+      <label for="mood">mood</label>
+      <select id="mood" autocomplete="off">
+        <option value="auto">auto</option>
+        <option value="gallery">gallery</option>
+        <option value="editorial">editorial</option>
+        <option value="zine">zine</option>
+      </select>
+    </span>
+    <span class="field">
+      <label for="images">images</label>
+      <input id="images" type="checkbox" autocomplete="off" />
+    </span>
+    <button id="copy" type="button">copy export</button>
+  </header>
+  <div id="strip" class="strip" aria-label="seed gallery"></div>
+  <iframe id="preview" class="preview" title="layout preview"></iframe>
+  <script type="module" src="/demo/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shuffled layout — seed 11 (gallery)</title>
+<style>
+:root{
+  --fluid-space:clamp(2rem, 6vw, 8rem);
+  --fluid-gap:clamp(1.5rem, 4vw, 6rem);
+  --font-display:clamp(2.25rem, 6vw, 8rem);
+  --font-body:clamp(1rem, 1.1vw, 1.2rem);
+  --bg:#e6ebf0;--fg:#151a1f;--accent:hsl(184 68% 32%);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--fg);font-family:"Helvetica Neue", Helvetica, Arial, sans-serif}
+.shuffled{display:flex;flex-direction:column}
+.shuffled section{padding:var(--fluid-space);container-type:inline-size;border-block-start:2px solid var(--accent)}
+.shuffled section[data-archetype="full-bleed"]{padding:0}
+.shuffled section:has(figure):not(:has(p)){gap:calc(var(--fluid-gap) * 0.5)}
+.headline{font:700 var(--font-display)/0.95 "Helvetica Neue", Helvetica, Arial, sans-serif;letter-spacing:-0.02em;text-wrap:balance;min-inline-size:min(12ch, 100%);}
+.paragraph{font-size:var(--font-body);line-height:1.55;text-wrap:pretty;max-inline-size:62ch;min-inline-size:min(28ch, 100%)}
+.caption{font-size:calc(var(--font-body) * 0.78);letter-spacing:0.08em;text-transform:uppercase;opacity:0.75}
+figure{min-inline-size:min(14rem, 100%)}
+figure .ph{inline-size:100%}
+figure figcaption{padding-block-start:0.5em}
+::selection{background:var(--accent);color:var(--bg)}
+.s0{gap:calc(var(--fluid-gap) * 1);display:grid;grid-template-columns:repeat(6, 1fr);grid-auto-rows:minmax(3rem, auto);min-height:70vh}
+.s1{gap:calc(var(--fluid-gap) * 1);display:flex;flex-wrap:wrap;flex-direction:column;justify-content:flex-start;align-items:flex-start}
+.s2{gap:calc(var(--fluid-gap) * 1);display:grid;grid-template-columns:repeat(6, 1fr);grid-auto-rows:minmax(3rem, auto);min-height:70vh}
+.s3{gap:calc(var(--fluid-gap) * 2);display:flex;flex-wrap:wrap;flex-direction:column;justify-content:flex-start;align-items:flex-end}
+.s4{gap:calc(var(--fluid-gap) * 0.5);display:flex;flex-wrap:wrap;flex-direction:row;justify-content:flex-start;align-items:flex-start}
+.s5{gap:calc(var(--fluid-gap) * 1);display:flex;flex-wrap:wrap;flex-direction:column;justify-content:center;align-items:flex-end;min-height:53vh}
+</style>
+</head>
+<body>
+<main class="shuffled">
+  <section class="s0" data-archetype="collage">
+    <figure style="grid-area:1 / 1 / 4 / 5;z-index:1"><div class="ph" style="aspect-ratio:1 / 1;background:linear-gradient(135deg,hsl(222 55% 72%),hsl(262 65% 42%))"></div><figcaption class="caption">From the series “Margins”</figcaption></figure>
+    <h1 class="headline" style="grid-area:2 / 3 / 5 / 7;z-index:2">An Index of Accidents</h1>
+    <p class="caption" style="grid-area:5 / 1 / 6 / 3">Detail, silver gelatin print</p>
+  </section>
+  <section class="s1" data-archetype="offset-stack">
+    <h2 class="headline" style="flex:0 1 auto;align-self:flex-start">An Index of Accidents</h2>
+    <p class="paragraph" style="flex:0 1 auto;align-self:flex-end">Nemo enim ipsam voluptatem quia voluptas sit aspernatur. Proportion is carried by flexible basis and clamped scale, not by pixel arithmetic done once and regretted forever.</p>
+    <p class="paragraph" style="flex:0 1 auto;align-self:flex-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit. The viewport is not a constraint to be negotiated but a sheet to be read, top to bottom, at whatever width it happens to arrive.</p>
+  </section>
+  <section class="s2" data-archetype="collage">
+    <figure style="grid-area:1 / 1 / 5 / 5;z-index:1"><div class="ph" style="aspect-ratio:3 / 4;background:linear-gradient(135deg,hsl(201 55% 72%),hsl(241 65% 42%))"></div><figcaption class="caption">Fig. 01 — Untitled study</figcaption></figure>
+    <h2 class="headline" style="grid-area:3 / 3 / 5 / 7;z-index:2">The Page Is a Room</h2>
+    <p class="caption" style="grid-area:5 / 1 / 6 / 3">Work in progress, undated</p>
+  </section>
+  <section class="s3" data-archetype="offset-stack">
+    <h2 class="headline" style="flex:0 1 auto;align-self:flex-start">An Index of Accidents</h2>
+    <p class="paragraph" style="flex:0 1 auto;align-self:flex-end">Sed ut perspiciatis unde omnis iste natus. Blocks are editorial entities: each one argues for itself, holds its own margins, and refuses to be squeezed into a column count it never asked for.</p>
+    <p class="paragraph" style="flex:0 1 auto;align-self:flex-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit. The viewport is not a constraint to be negotiated but a sheet to be read, top to bottom, at whatever width it happens to arrive.</p>
+  </section>
+  <section class="s4" data-archetype="strip">
+    <figure style="flex:1 1 24%"><div class="ph" style="aspect-ratio:3 / 4;background:linear-gradient(135deg,hsl(198 55% 72%),hsl(238 65% 42%))"></div><figcaption class="caption">From the series “Margins”</figcaption></figure>
+    <figure style="flex:1 1 25%"><div class="ph" style="aspect-ratio:4 / 3;background:linear-gradient(135deg,hsl(222 55% 72%),hsl(262 65% 42%))"></div><figcaption class="caption">Work in progress, undated</figcaption></figure>
+    <figure style="flex:1 1 20%"><div class="ph" style="aspect-ratio:4 / 3;background:linear-gradient(135deg,hsl(160 55% 72%),hsl(200 65% 42%))"></div><figcaption class="caption">Installation view</figcaption></figure>
+    <p class="caption" style="flex:1 1 100%">From the series “Margins”</p>
+  </section>
+  <section class="s5" data-archetype="masthead">
+    <p class="caption" style="flex:1 1 100%">Index</p>
+    <h2 class="headline" style="flex:0 1 auto">The Page Is a Room</h2>
+  </section>
+</main>
+</body>
+</html>
